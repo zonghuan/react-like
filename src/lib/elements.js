@@ -1,7 +1,4 @@
-var elements = {
-  
-}
-
+import {elements} from './var.js'
 
 export default ()=>{
 

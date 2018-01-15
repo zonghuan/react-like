@@ -1,5 +1,10 @@
 import {elements} from './var.js'
 
-export default ()=>{
+export default (component)=>{
+  if(typeof(component)==='function'){
+    
+  }
+  if(typeof(component)==='string'){
 
+  }
 }

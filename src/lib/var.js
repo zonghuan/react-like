@@ -1,3 +1,5 @@
+
 export default {
-  elements:{}
+  elements:{},
+  index:0
 }

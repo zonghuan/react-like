@@ -1,0 +1,26 @@
+{
+  "name": "react-like",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "front-build": "NODE_ENV=production  ./node_modules/webpack/bin/webpack.js --progress --config ./node_modules/wp-conf/prod.config.js",
+    "front-dev": "node_modules/.bin/webpack-dev-server --hot --inline --config ./node_modules/wp-conf/dev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zonghuan/react-like.git"
+  },
+  "wp-conf": {
+    "port": 9003
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zonghuan/react-like/issues"
+  },
+  "homepage": "https://github.com/zonghuan/react-like#readme",
+  "dependencies": {
+    "wp-conf": "^1.0.16"
+  }
+}

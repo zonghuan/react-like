@@ -10,7 +10,12 @@ var MySpan = createClass({
 
 var MyDiv = createClass({
   render(){
-    return createElement(MySpan,{className:'custom'})
+    return createElement('div',{
+      className:'wrap',
+      children:[
+        createElement(MySpan,{className:'custom'})
+      ]
+    })
   }
 })
 

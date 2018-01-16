@@ -1,16 +1,10 @@
 import {elements} from './var.js'
 
 export default (component,prop,children)=>{
-  var wrap = null
-  if(typeof(component)==='function'){
-    wrap = {
-      name:component.name,
-      prop,
-      children
-    }
-  }
+  var node = null
+  
   if(typeof(component)==='string'){
-    wrap = {
+    node = {
       name:component,
       prop,
       children

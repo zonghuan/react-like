@@ -13,7 +13,8 @@ var MyDiv = createClass({
     return createElement('div',{
       className:'wrap',
       children:[
-        createElement(MySpan,{className:'custom'})
+        createElement(MySpan,{className:'custom'}),
+        'abcd'
       ]
     })
   }

@@ -1,5 +1,9 @@
 export default (component)=>{
   return ()=>{
-    return component.render()
+    if(typeof(component)==='function'){
+      return component()
+    }else if(component.render){
+      return component.render()  
+    }
   }
 }

@@ -1,15 +1,15 @@
-import {elements} from './var.js'
+import {isArray} from './var.js'
 
-export default (component,prop,children)=>{
-  var node = null
-  
-  if(typeof(component)==='string'){
-    node = {
-      name:component,
-      prop,
-      children
-    }
+export default (component,prop={},children)=>{
+  if(!isArray(prop.children)){
+    prop.children = []
   }
-  return wrap
-
+  if(isArray(children)){
+    prop.children = prop.children.concat(children)
+  }
+  var node = {
+    name:component,
+    prop
+  }
+  return node
 }

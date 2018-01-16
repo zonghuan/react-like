@@ -19,6 +19,4 @@ var MyDiv = createClass({
   }
 })
 
-//render(createElement(MyDiv))
-
-console.log(createElement(MyDiv))
+render(createElement(MyDiv),document.getElementById('content'))

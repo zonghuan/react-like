@@ -1,5 +1,2 @@
 
-export default {
-  elements:{},
-  index:0
-}
+export var isArray = (arr)=>Object.prototype.toString.call(arr)==='[object Array]'

@@ -5,6 +5,7 @@ import render from './lib/render.js'
 var MySpan = createClass({
   render(){
     return  createElement('span',{
+      className:this.prop.className,
       children:this.prop.children
     })
   }
@@ -14,6 +15,9 @@ var MyDiv = createClass({
   render(){
     return createElement('div',{
       className:'wrap',
+      style:{
+        'backgroundColor':'#000'
+      },
       children:[
         createElement(MySpan,{className:'custom',children:[123]}),
         'abcd'

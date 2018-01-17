@@ -1,9 +1,19 @@
+
+var base = {
+  render(){}
+}
+
+
 export default (component)=>{
-  return ()=>{
-    if(typeof(component)==='function'){
-      return component()
-    }else if(component.render){
-      return component.render()  
+
+  if(typeof(component)==='function'){
+    component = {
+      render(){
+        return component.call(null)
+      }
     }
   }
+
+  return Object.assign({},base,component)
+
 }

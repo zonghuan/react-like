@@ -1,6 +1,17 @@
 
 var base = {
-  render(){}
+  getInitialState(){
+    return {}
+  },
+  componentDidMount(){
+
+  },
+  setState(){
+    
+  },
+  render(){
+
+  }
 }
 
 

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "front-build": "NODE_ENV=production  ./node_modules/webpack/bin/webpack.js --progress --config ./node_modules/wp-conf/prod.config.js",
-    "front-dev": "node_modules/.bin/webpack-dev-server --hot --inline --config ./node_modules/wp-conf/dev.config.js"
+    "build": "NODE_ENV=production  ./node_modules/webpack/bin/webpack.js --progress --config ./node_modules/wp-conf/prod.config.js",
+    "dev": "node_modules/.bin/webpack-dev-server --hot --inline --config ./node_modules/wp-conf/dev.config.js"
   },
   "repository": {
     "type": "git",

@@ -25,6 +25,8 @@ export default function render(element,parent){
   if(typeof(name)==='object'){
     name.prop = prop
     name.state = name.getInitialState()
+    name.componentDidMount&&name.componentDidMount()
+    name.mounted = true
     render(name.render(),parent)
   }
 

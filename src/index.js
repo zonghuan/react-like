@@ -14,14 +14,13 @@ var MySpan = createClass({
 var MyDiv = createClass({
   getInitialState(){
     return {
-      text:'123'
+      text:'state'
     }
   },
   componentDidMount(){
 
   },
   render(){
-
     return createElement('div',{
       className:'wrap',
       children:[

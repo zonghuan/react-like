@@ -14,13 +14,11 @@ export var renderDom = (element,parent,level=0,index=0)=>{
   var {className,style,children,key} = prop||{}
   var dom = null
 
-  if(typeof(element.key)==='undefined'){
-    element.key = index
-  }
-
   // 子元素为字符
   if(['string','number'].indexOf(typeof(element)) > -1){
     dom = document.createTextNode(element)
+  }else if(typeof(element.key)==='undefined'){
+    element.key = index
   }
 
   // 原生dom

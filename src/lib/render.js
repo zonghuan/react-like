@@ -9,28 +9,42 @@ var setStyle = (dom,style)=>{
   }
 }
 
-// 将createElement创建的对象转化为dom
-export default function render(element,parent){
-
+export var renderDom = (element,parent,level=0,index=0)=>{
   var {name,prop} = element
   var {className,style,children,key} = prop||{}
   var dom = null
 
+  if(typeof(element.key)==='undefined'){
+    element.key = index
+  }
+
+  // 子元素为字符
   if(['string','number'].indexOf(typeof(element)) > -1){
     dom = document.createTextNode(element)
   }
+
+  // 原生dom
   if(typeof(name)==='string'){
     dom = document.createElement(name)
   }
+
   if(typeof(name)==='object'){
     name.prop = prop
     name.state = name.getInitialState()
     name.componentDidMount&&name.componentDidMount()
     name.mounted = true
-    render(name.render(),parent)
+    renderDom(name.render(),parent,level,index)
   }
 
   if(dom){
+
+    // textNode不生成reactId
+    if(dom.nodeType!==3){
+      var reactId = `r-${level}-${index}`
+      dom.setAttribute('reactId',reactId)
+      element.reactId = reactId
+    }
+
     if(typeof(className)==='string'){
       dom.className = className
     }
@@ -40,9 +54,15 @@ export default function render(element,parent){
     parent.appendChild(dom)
     if(isArray(children)){
       for(var i=0;i<children.length;i++){
-        render(children[i],dom)
+        renderDom(children[i],dom,level+1,i)
       }
     }
   }
+}
+
+// 将createElement创建的对象转化为dom
+export default function render(element,parent){
+
+  return renderDom(element,parent)
 
 }

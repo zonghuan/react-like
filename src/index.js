@@ -12,7 +12,16 @@ var MySpan = createClass({
 })
 
 var MyDiv = createClass({
+  getInitialState(){
+    return {
+      text:'123'
+    }
+  },
+  componentDidMount(){
+
+  },
   render(){
+
     return createElement('div',{
       className:'wrap',
       style:{
@@ -20,7 +29,7 @@ var MyDiv = createClass({
       },
       children:[
         createElement(MySpan,{className:'custom',children:[123]}),
-        'abcd'
+        this.state.text
       ]
     })
   }

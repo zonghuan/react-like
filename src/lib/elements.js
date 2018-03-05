@@ -9,7 +9,8 @@ export default (component,prop={},children)=>{
   }
   var node = {
     name:component,
-    prop
+    prop,
+    mounted:false
   }
   return node
 }

@@ -1,4 +1,4 @@
-import {isArray} from './var.js'
+import {isArray,domGroup} from './var.js'
 
 var setStyle = (dom,style)=>{
   if(typeof(style)==='object'){
@@ -9,6 +9,7 @@ var setStyle = (dom,style)=>{
   }
 }
 
+// 将createElement创建的对象转化为dom
 export default function render(element,parent){
 
   var {name,prop} = element
@@ -23,6 +24,7 @@ export default function render(element,parent){
   }
   if(typeof(name)==='object'){
     name.prop = prop
+    name.state = name.getInitialState()
     render(name.render(),parent)
   }
 

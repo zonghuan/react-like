@@ -31,8 +31,8 @@ export var renderDom = (element,parent,level=0,index=0)=>{
   if(typeof(name)==='object'){
     name.prop = prop
     name.state = name.getInitialState()
-    name.componentDidMount&&name.componentDidMount()
     name.mounted = true
+    name.componentDidMount&&name.componentDidMount()
     renderDom(name.render(),parent,level,index)
   }
 
@@ -41,7 +41,7 @@ export var renderDom = (element,parent,level=0,index=0)=>{
     // textNode不生成reactId
     if(dom.nodeType!==3){
       var reactId = `r-${level}-${index}`
-      dom.setAttribute('reactId',reactId)
+      dom.setAttribute('data-reactId',reactId)
       element.reactId = reactId
     }
 

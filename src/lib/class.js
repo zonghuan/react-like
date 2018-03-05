@@ -6,7 +6,11 @@ var base = {
   componentDidMount(){
 
   },
-  setState(){
+  setState(state,cb=(()=>{})){
+    if(!this.mounted){
+      console.error(`不能在getInitialState中使用setState`)
+    }
+    var preState = this.state
     
   },
   render(){

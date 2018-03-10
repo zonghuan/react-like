@@ -1,3 +1,4 @@
+import varGroup from './var.js'
 
 var base = {
   getInitialState(){
@@ -11,7 +12,7 @@ var base = {
       console.error(`不能在getInitialState中使用setState`)
     }
     var preState = this.state
-    
+    console.log(state)
   },
   render(){
 

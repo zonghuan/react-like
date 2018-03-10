@@ -18,7 +18,9 @@ var MyDiv = createClass({
     }
   },
   componentDidMount(){
-
+    this.setState({
+      text:'state-2'
+    })
   },
   render(){
     return createElement('div',{

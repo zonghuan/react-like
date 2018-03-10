@@ -1,4 +1,5 @@
 import {isArray,domGroup} from './var.js'
+import varGroup from './var.js'
 
 var setStyle = (dom,style)=>{
   if(typeof(style)==='object'){
@@ -61,6 +62,7 @@ export var renderDom = (element,parent,level=0,index=0)=>{
 // 将createElement创建的对象转化为dom
 export default function render(element,parent){
 
+  varGroup.root = element
   return renderDom(element,parent)
 
 }

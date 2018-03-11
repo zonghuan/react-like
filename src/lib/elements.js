@@ -10,7 +10,6 @@ export default (component,prop={},children)=>{
   var node = {
     name:component,
     prop,
-    
     mounted:false,
     dirty:false
   }

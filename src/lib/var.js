@@ -11,7 +11,10 @@ var diffObj = (pre={},cur={})=>{
 }
 // 比对虚拟dom
 export var diff = (pre,cur)=>{
-  if(!pre||!cur){
+  if(!cur){
+    return
+  }
+  if(!pre){
     cur.dirty = true
   }
   if(pre.name!==cur.name){

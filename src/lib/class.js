@@ -1,4 +1,5 @@
 import varGroup from './var.js'
+import {diff} from './var.js'
 
 var base = {
   getInitialState(){
@@ -12,7 +13,8 @@ var base = {
       console.error(`不能在getInitialState中使用setState`)
     }
     var preState = this.state
-    console.log(state)
+    var preObj = Object.assign(varGroup.root)
+    console.log(varGroup.root)
   },
   render(){
 

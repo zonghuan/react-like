@@ -1,6 +1,7 @@
 import {isArray} from './var.js'
 
 export default (component,prop={},children)=>{
+  console.log(prop)
   if(!isArray(prop.children)){
     prop.children = []
   }
